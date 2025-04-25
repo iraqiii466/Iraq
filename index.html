@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>موقعي الشخصي – متجر</title>
+  <!-- دمج CSS داخل الصفحة -->
+  <style>
+    /* أساسيات */
+    * { margin:0; padding:0; box-sizing:border-box; font-family: "Segoe UI", Tahoma, sans-serif; }
+    body { line-height: 1.6; color: #333; }
+
+    /* الحاويات */
+    .container { width: 90%; max-width: 1200px; margin: auto; }
+
+    /* الهيدر */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      position: sticky; top:0; z-index:100;
+    }
+    header .container { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+    header .logo { font-size: 1.5rem; }
+    nav ul { list-style: none; display: flex; gap: 1rem; }
+    nav ul li a { text-decoration: none; padding: .5rem; transition: background .3s; }
+    nav ul li a:hover { background: #f0f0f0; border-radius: 4px; }
+
+    /* زر قائمة الجوال */
+    #nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+
+    /* الهيرو */
+    .hero {
+      background: url('https://via.placeholder.com/1200x400') center/cover no-repeat;
+      color: #fff; text-align: center; padding: 4rem 0;
+    }
+    .hero .btn { display: inline-block; margin-top: 1rem; text-decoration: none; padding: .75rem 1.5rem; border: 2px solid #fff; border-radius: 4px; }
+
+    /* الأقسام */
+    section { padding: 3rem 0; }
+    section h2 { text-align: center; margin-bottom: 1.5rem; font-size: 2rem; }
+
+    /* شبكة المنتجات */
+    .grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .card { border: 1px solid #ddd; border-radius: 6px; overflow: hidden; text-align: center; padding-bottom: 1rem; }
+    .card img { width: 100%; display: block; }
+    .card h3 { margin: .75rem 0; }
+    .card p { font-size: .9rem; color: #555; padding: 0 .5rem; }
+    .price { display: block; margin: .5rem 0; font-weight: bold; }
+    .btn { cursor: pointer; padding: .5rem 1rem; border: none; border-radius:4px; background: #333; color: #fff; transition: opacity .3s; }
+    .btn:hover { opacity: .8; }
+
+    /* الفورم */
+    form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 1rem; }
+    input, textarea { width: 100%; padding: .75rem; border:1px solid #ccc; border-radius:4px; }
+    textarea { resize: vertical; }
+
+    /* الفوتر */
+    footer { background: #f8f8f8; text-align: center; padding: 1rem 0; font-size: .9rem; color: #666; }
+
+    /* تجاوب الجوال */
+    @media (max-width: 768px) {
+      nav { position: absolute; top: 100%; right: 0; background: #fff; width: 200px; transform: translateX(100%); transition: transform .3s; }
+      nav.open { transform: translateX(0); }
+      nav ul { flex-direction: column; }
+      #nav-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ـــ الشريط العلوي (Header) ـــ -->
+  <header>
+    <div class="container">
+      <h1 class="logo">اسمي هنا</h1>
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#about">عنّي</a></li>
+          <li><a href="#products">المنتجات</a></li>
+          <li><a href="#contact">تواصل معي</a></li>
+        </ul>
+      </nav>
+      <button id="nav-toggle">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- ـــ قسم الهيرو / الترحيب ـــ -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h2>مرحباً بكم في متجري الشخصي</h2>
+      <p>هنا أقدم لكم أفضل المنتجات التي قمت بتصميمها وصنعها بنفسي.</p>
+      <a href="#products" class="btn">تسوق الآن</a>
+    </div>
+  </section>
+
+  <!-- ـــ قسم عنّي ـــ -->
+  <section id="about">
+    <div class="container">
+      <h2>عنّي</h2>
+      <p>أنا مطور ومصمم مهتم بإنشاء منتجات رقمية ومادية عالية الجودة. أحببت مشاركة بعض من أعمالي معكم عبر هذا المتجر الصغير.</p>
+    </div>
+  </section>
+
+  <!-- ـــ قسم المنتجات ـــ -->
+  <section id="products">
+    <div class="container">
+      <h2>منتجاتي</h2>
+      <div class="grid">
+        <!-- بطاقة منتج -->
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200" alt="منتج 1"/>
+          <h3>منتج 1</h3>
+          <p>وصف مختصر للمنتج.</p>
+          <span class="price">10 د.ك</span>
+          <button class="btn">أضف إلى السلة</button>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200" alt="منتج 2"/>
+          <h3>منتج 2</h3>
+          <p>وصف مختصر للمنتج.</p>
+          <span class="price">15 د.ك</span>
+          <button class="btn">أضف إلى السلة</button>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200" alt="منتج 3"/>
+          <h3>منتج 3</h3>
+          <p>وصف مختصر للمنتج.</p>
+          <span class="price">8 د.ك</span>
+          <button class="btn">أضف إلى السلة</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ـــ قسم تواصل معي ـــ -->
+  <section id="contact">
+    <div class="container">
+      <h2>تواصل معي</h2>
+      <form>
+        <label>الاسم</label>
+        <input type="text" placeholder="اسمك" required />
+        <label>البريد الإلكتروني</label>
+        <input type="email" placeholder="example@mail.com" required />
+        <label>الرسالة</label>
+        <textarea placeholder="رسالتك..." required></textarea>
+        <button type="submit" class="btn">إرسال</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ـــ تذييل الصفحة (Footer) ـــ -->
+  <footer>
+    <div class="container">
+      <p>© 2025 اسمك. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <!-- ـــ جافاسكربت لقائمة الجوال ـــ -->
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
